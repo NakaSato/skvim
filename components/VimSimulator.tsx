@@ -49,7 +49,7 @@ export function VimSimulator() {
   };
 
   // Initialize keyboard handler
-  const { handleKeyDown } = useKeyboardHandler({
+  const { handleKeyDown, keySequence } = useKeyboardHandler({
     state,
     setState,
     isActive,
@@ -97,8 +97,11 @@ export function VimSimulator() {
         {/* Control Panel */}
         <ControlPanel
           isActive={isActive}
+          mode={state.mode}
           showHelp={showHelp}
           showNotes={showNotes}
+          keySequence={keySequence}
+          onActivate={() => setIsActive(true)}
           onToggleHelp={() => setShowHelp(!showHelp)}
           onToggleNotes={() => setShowNotes(!showNotes)}
           onReset={resetSimulator}

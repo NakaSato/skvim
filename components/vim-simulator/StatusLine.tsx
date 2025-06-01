@@ -4,7 +4,6 @@ import { getModeColor } from "./utils";
 
 interface StatusLineProps {
   state: EditorState;
-  getModeColor: (mode: VimMode) => string;
 }
 
 export const StatusLine: React.FC<StatusLineProps> = ({ state }) => {

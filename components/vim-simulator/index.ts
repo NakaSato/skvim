@@ -23,11 +23,7 @@ export { useKeyboardHandler } from "./KeyboardHandler";
 export { clampCursor, isWordChar, isWhitespace, getModeColor } from "./utils";
 
 // Data
-export {
-  normalModeTooltips,
-  insertModeTooltips,
-  commandModeTooltips,
-} from "./command-tooltips";
+export { commandTooltips } from "./command-tooltips";
 
 export { createInitialState } from "./initial-state";
 
