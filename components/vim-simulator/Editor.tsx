@@ -93,7 +93,7 @@ export const Editor: React.FC<EditorProps> = ({
         onClick={onEditorClick}
         style={{
           fontFamily:
-            'Anuphan, "SF Mono", Monaco, "Cascadia Code", "Roboto Mono", Consolas, "Courier New", monospace',
+            '"SF Mono", Monaco, "Cascadia Code", "Roboto Mono", Consolas, "Courier New", monospace',
         }}
       >
         {state.lines.map((line, lineIndex) => (

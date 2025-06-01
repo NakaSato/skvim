@@ -14,7 +14,15 @@ export type {
 export { ControlPanel } from "./ControlPanel";
 export { HelpPanel } from "./HelpPanel";
 export { Editor } from "./Editor";
+export { EnhancedEditor } from "./EnhancedEditor";
+export { VirtualizedEditor } from "./VirtualizedEditor";
 export { StatusLine } from "./StatusLine";
+export { EnhancedStatusLine } from "./EnhancedStatusLine";
+export {
+  SyntaxHighlightedLine,
+  JavaScriptHighlighter,
+} from "./SyntaxHighlighter";
+export type { SyntaxToken, SyntaxHighlighter } from "./SyntaxHighlighter";
 
 export { useKeyboardHandler } from "./KeyboardHandler";
 export { clampCursor, isWordChar, isWhitespace, getModeColor } from "./utils";
