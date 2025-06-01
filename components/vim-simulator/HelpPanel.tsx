@@ -1,162 +1,259 @@
 "use client";
 
 import React from "react";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 export const HelpPanel: React.FC = () => {
   return (
-    <Card className="bg-white/5 backdrop-blur-sm border-white/10">
-      <CardHeader>
-        <CardTitle className="text-white text-lg">Quick Reference</CardTitle>
-      </CardHeader>
-      <CardContent>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-sm">
-          <div>
-            <h4 className="text-cyan-300 font-semibold mb-2">Normal Mode</h4>
-            <ul className="space-y-1 text-white/80">
-              <li>
-                <code className="bg-white/10 px-1 rounded">h/j/k/l</code> - Move
-                cursor
-              </li>
-              <li>
-                <code className="bg-white/10 px-1 rounded">w/b/e</code> - Word
-                navigation
-              </li>
-              <li>
-                <code className="bg-white/10 px-1 rounded">0/$</code> - Line
-                navigation
-              </li>
-              <li>
-                <code className="bg-white/10 px-1 rounded">gg/G</code> - File
-                navigation
-              </li>
-              <li>
-                <code className="bg-white/10 px-1 rounded">f/F/t/T</code> - Find
-                in line
-              </li>
-              <li>
-                <code className="bg-white/10 px-1 rounded">i/a/o</code> - Insert
-                mode
-              </li>
-              <li>
-                <code className="bg-white/10 px-1 rounded">v/V</code> - Visual
-                mode
-              </li>
-              <li>
-                <code className="bg-white/10 px-1 rounded">x</code> - Delete
-                char
-              </li>
-              <li>
-                <code className="bg-white/10 px-1 rounded">dd</code> - Delete
-                line
-              </li>
-              <li>
-                <code className="bg-white/10 px-1 rounded">yy</code> - Copy line
-              </li>
-              <li>
-                <code className="bg-white/10 px-1 rounded">p</code> - Paste
-              </li>
-              <li>
-                <code className="bg-white/10 px-1 rounded">u/Ctrl+r</code> -
-                Undo/Redo
-              </li>
-            </ul>
+    <div className="bg-gradient-to-br from-slate-900 via-gray-900 to-slate-800 rounded-2xl shadow-2xl border border-slate-700/50 overflow-hidden backdrop-blur-sm">
+      {/* Modern Header */}
+      <div className="bg-gradient-to-r from-slate-800 to-slate-700 px-6 py-4 border-b border-slate-600/30">
+        <h2 className="text-slate-200 text-lg font-semibold tracking-wide">
+          Quick Reference Guide
+        </h2>
+      </div>
+
+      {/* Content */}
+      <div className="p-6">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-sm">
+          {/* Normal Mode */}
+          <div className="space-y-4">
+            <h4 className="text-cyan-300 font-semibold text-base flex items-center gap-2">
+              <div className="w-2 h-2 bg-cyan-400 rounded-full"></div>
+              Normal Mode
+            </h4>
+            <div className="space-y-3 text-slate-200">
+              <div className="flex justify-between items-center py-1">
+                <code className="bg-slate-700/50 px-2 py-1 rounded-lg text-cyan-300 font-mono text-xs">
+                  h/j/k/l
+                </code>
+                <span className="text-slate-300">Move cursor</span>
+              </div>
+              <div className="flex justify-between items-center py-1">
+                <code className="bg-slate-700/50 px-2 py-1 rounded-lg text-cyan-300 font-mono text-xs">
+                  w/b/e
+                </code>
+                <span className="text-slate-300">Word navigation</span>
+              </div>
+              <div className="flex justify-between items-center py-1">
+                <code className="bg-slate-700/50 px-2 py-1 rounded-lg text-cyan-300 font-mono text-xs">
+                  0/$
+                </code>
+                <span className="text-slate-300">Line navigation</span>
+              </div>
+              <div className="flex justify-between items-center py-1">
+                <code className="bg-slate-700/50 px-2 py-1 rounded-lg text-cyan-300 font-mono text-xs">
+                  gg/G
+                </code>
+                <span className="text-slate-300">File navigation</span>
+              </div>
+              <div className="flex justify-between items-center py-1">
+                <code className="bg-slate-700/50 px-2 py-1 rounded-lg text-cyan-300 font-mono text-xs">
+                  f/F/t/T
+                </code>
+                <span className="text-slate-300">Find in line</span>
+              </div>
+              <div className="flex justify-between items-center py-1">
+                <code className="bg-slate-700/50 px-2 py-1 rounded-lg text-green-300 font-mono text-xs">
+                  i/a/o
+                </code>
+                <span className="text-slate-300">Insert mode</span>
+              </div>
+              <div className="flex justify-between items-center py-1">
+                <code className="bg-slate-700/50 px-2 py-1 rounded-lg text-purple-300 font-mono text-xs">
+                  v/V
+                </code>
+                <span className="text-slate-300">Visual mode</span>
+              </div>
+              <div className="flex justify-between items-center py-1">
+                <code className="bg-slate-700/50 px-2 py-1 rounded-lg text-red-300 font-mono text-xs">
+                  x
+                </code>
+                <span className="text-slate-300">Delete char</span>
+              </div>
+              <div className="flex justify-between items-center py-1">
+                <code className="bg-slate-700/50 px-2 py-1 rounded-lg text-red-300 font-mono text-xs">
+                  dd
+                </code>
+                <span className="text-slate-300">Delete line</span>
+              </div>
+              <div className="flex justify-between items-center py-1">
+                <code className="bg-slate-700/50 px-2 py-1 rounded-lg text-blue-300 font-mono text-xs">
+                  yy
+                </code>
+                <span className="text-slate-300">Copy line</span>
+              </div>
+              <div className="flex justify-between items-center py-1">
+                <code className="bg-slate-700/50 px-2 py-1 rounded-lg text-blue-300 font-mono text-xs">
+                  p
+                </code>
+                <span className="text-slate-300">Paste</span>
+              </div>
+              <div className="flex justify-between items-center py-1">
+                <code className="bg-slate-700/50 px-2 py-1 rounded-lg text-yellow-300 font-mono text-xs">
+                  u/Ctrl+r
+                </code>
+                <span className="text-slate-300">Undo/Redo</span>
+              </div>
+            </div>
           </div>
-          <div>
-            <h4 className="text-green-300 font-semibold mb-2">
+
+          {/* Text Objects */}
+          <div className="space-y-4">
+            <h4 className="text-green-300 font-semibold text-base flex items-center gap-2">
+              <div className="w-2 h-2 bg-green-400 rounded-full"></div>
               Text Objects & Operators
             </h4>
-            <ul className="space-y-1 text-white/80">
-              <li>
-                <code className="bg-white/10 px-1 rounded">d[object]</code> -
-                Delete object
-              </li>
-              <li>
-                <code className="bg-white/10 px-1 rounded">c[object]</code> -
-                Change object
-              </li>
-              <li>
-                <code className="bg-white/10 px-1 rounded">y[object]</code> -
-                Yank (copy) object
-              </li>
-              <li className="mt-2 text-cyan-200">Inner Objects (i):</li>
-              <li>
-                <code className="bg-white/10 px-1 rounded">iw</code> - Inner
-                word
-              </li>
-              <li>
-                <code className="bg-white/10 px-1 rounded">ip</code> - Inner
-                paragraph
-              </li>
-              <li>
-                <code className="bg-white/10 px-1 rounded">i"</code> - Inside
-                quotes
-              </li>
-              <li>
-                <code className="bg-white/10 px-1 rounded">i(</code> - Inside
-                parentheses
-              </li>
-              <li className="mt-2 text-cyan-200">Around Objects (a):</li>
-              <li>
-                <code className="bg-white/10 px-1 rounded">aw</code> - Around
-                word
-              </li>
-              <li>
-                <code className="bg-white/10 px-1 rounded">ap</code> - Around
-                paragraph
-              </li>
-            </ul>
+            <div className="space-y-3 text-slate-200">
+              <div className="flex justify-between items-center py-1">
+                <code className="bg-slate-700/50 px-2 py-1 rounded-lg text-red-300 font-mono text-xs">
+                  d[object]
+                </code>
+                <span className="text-slate-300">Delete object</span>
+              </div>
+              <div className="flex justify-between items-center py-1">
+                <code className="bg-slate-700/50 px-2 py-1 rounded-lg text-yellow-300 font-mono text-xs">
+                  c[object]
+                </code>
+                <span className="text-slate-300">Change object</span>
+              </div>
+              <div className="flex justify-between items-center py-1">
+                <code className="bg-slate-700/50 px-2 py-1 rounded-lg text-blue-300 font-mono text-xs">
+                  y[object]
+                </code>
+                <span className="text-slate-300">Yank object</span>
+              </div>
+
+              <div className="pt-2 border-t border-slate-600/30">
+                <div className="text-cyan-200 font-medium mb-2 text-xs uppercase tracking-wider">
+                  Inner Objects (i):
+                </div>
+                <div className="space-y-2">
+                  <div className="flex justify-between items-center py-1">
+                    <code className="bg-slate-700/50 px-2 py-1 rounded-lg text-cyan-300 font-mono text-xs">
+                      iw
+                    </code>
+                    <span className="text-slate-300">Inner word</span>
+                  </div>
+                  <div className="flex justify-between items-center py-1">
+                    <code className="bg-slate-700/50 px-2 py-1 rounded-lg text-cyan-300 font-mono text-xs">
+                      ip
+                    </code>
+                    <span className="text-slate-300">Inner paragraph</span>
+                  </div>
+                  <div className="flex justify-between items-center py-1">
+                    <code className="bg-slate-700/50 px-2 py-1 rounded-lg text-cyan-300 font-mono text-xs">
+                      i"
+                    </code>
+                    <span className="text-slate-300">Inside quotes</span>
+                  </div>
+                  <div className="flex justify-between items-center py-1">
+                    <code className="bg-slate-700/50 px-2 py-1 rounded-lg text-cyan-300 font-mono text-xs">
+                      i(
+                    </code>
+                    <span className="text-slate-300">Inside parens</span>
+                  </div>
+                </div>
+              </div>
+
+              <div className="pt-2 border-t border-slate-600/30">
+                <div className="text-cyan-200 font-medium mb-2 text-xs uppercase tracking-wider">
+                  Around Objects (a):
+                </div>
+                <div className="space-y-2">
+                  <div className="flex justify-between items-center py-1">
+                    <code className="bg-slate-700/50 px-2 py-1 rounded-lg text-cyan-300 font-mono text-xs">
+                      aw
+                    </code>
+                    <span className="text-slate-300">Around word</span>
+                  </div>
+                  <div className="flex justify-between items-center py-1">
+                    <code className="bg-slate-700/50 px-2 py-1 rounded-lg text-cyan-300 font-mono text-xs">
+                      ap
+                    </code>
+                    <span className="text-slate-300">Around paragraph</span>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
-          <div>
-            <h4 className="text-blue-300 font-semibold mb-2">
+
+          {/* Other Modes */}
+          <div className="space-y-4">
+            <h4 className="text-blue-300 font-semibold text-base flex items-center gap-2">
+              <div className="w-2 h-2 bg-blue-400 rounded-full"></div>
               Insert & Visual Modes
             </h4>
-            <ul className="space-y-1 text-white/80">
-              <li>
-                <code className="bg-white/10 px-1 rounded">Escape</code> -
-                Normal mode
-              </li>
-              <li>
-                <code className="bg-white/10 px-1 rounded">Enter</code> - New
-                line
-              </li>
-              <li>
-                <code className="bg-white/10 px-1 rounded">Backspace</code> -
-                Delete back
-              </li>
-            </ul>
+            <div className="space-y-3 text-slate-200">
+              <div className="flex justify-between items-center py-1">
+                <code className="bg-slate-700/50 px-2 py-1 rounded-lg text-red-300 font-mono text-xs">
+                  Escape
+                </code>
+                <span className="text-slate-300">Normal mode</span>
+              </div>
+              <div className="flex justify-between items-center py-1">
+                <code className="bg-slate-700/50 px-2 py-1 rounded-lg text-green-300 font-mono text-xs">
+                  Enter
+                </code>
+                <span className="text-slate-300">New line</span>
+              </div>
+              <div className="flex justify-between items-center py-1">
+                <code className="bg-slate-700/50 px-2 py-1 rounded-lg text-yellow-300 font-mono text-xs">
+                  Backspace
+                </code>
+                <span className="text-slate-300">Delete back</span>
+              </div>
+            </div>
 
-            <h4 className="text-purple-300 font-semibold mt-4 mb-2">
-              Command Mode
-            </h4>
-            <ul className="space-y-1 text-white/80">
-              <li>
-                <code className="bg-white/10 px-1 rounded">:w</code> - Write
-                (save)
-              </li>
-              <li>
-                <code className="bg-white/10 px-1 rounded">:q</code> - Quit
-              </li>
-              <li>
-                <code className="bg-white/10 px-1 rounded">:wq</code> - Write
-                and quit
-              </li>
-            </ul>
+            <div className="pt-4 border-t border-slate-600/30">
+              <h4 className="text-purple-300 font-semibold text-base flex items-center gap-2 mb-3">
+                <div className="w-2 h-2 bg-purple-400 rounded-full"></div>
+                Command Mode
+              </h4>
+              <div className="space-y-3 text-slate-200">
+                <div className="flex justify-between items-center py-1">
+                  <code className="bg-slate-700/50 px-2 py-1 rounded-lg text-purple-300 font-mono text-xs">
+                    :w
+                  </code>
+                  <span className="text-slate-300">Write (save)</span>
+                </div>
+                <div className="flex justify-between items-center py-1">
+                  <code className="bg-slate-700/50 px-2 py-1 rounded-lg text-purple-300 font-mono text-xs">
+                    :q
+                  </code>
+                  <span className="text-slate-300">Quit</span>
+                </div>
+                <div className="flex justify-between items-center py-1">
+                  <code className="bg-slate-700/50 px-2 py-1 rounded-lg text-purple-300 font-mono text-xs">
+                    :wq
+                  </code>
+                  <span className="text-slate-300">Write and quit</span>
+                </div>
+              </div>
+            </div>
 
-            <h4 className="text-yellow-300 font-semibold mt-4 mb-2">Counts</h4>
-            <ul className="space-y-1 text-white/80">
-              <li>
-                <code className="bg-white/10 px-1 rounded">5j</code> - Move down
-                5 lines
-              </li>
-              <li>
-                <code className="bg-white/10 px-1 rounded">3dw</code> - Delete 3
-                words
-              </li>
-            </ul>
+            <div className="pt-4 border-t border-slate-600/30">
+              <h4 className="text-yellow-300 font-semibold text-base flex items-center gap-2 mb-3">
+                <div className="w-2 h-2 bg-yellow-400 rounded-full"></div>
+                Counts
+              </h4>
+              <div className="space-y-3 text-slate-200">
+                <div className="flex justify-between items-center py-1">
+                  <code className="bg-slate-700/50 px-2 py-1 rounded-lg text-yellow-300 font-mono text-xs">
+                    5j
+                  </code>
+                  <span className="text-slate-300">Move down 5 lines</span>
+                </div>
+                <div className="flex justify-between items-center py-1">
+                  <code className="bg-slate-700/50 px-2 py-1 rounded-lg text-yellow-300 font-mono text-xs">
+                    3dw
+                  </code>
+                  <span className="text-slate-300">Delete 3 words</span>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
-      </CardContent>
-    </Card>
+      </div>
+    </div>
   );
 };

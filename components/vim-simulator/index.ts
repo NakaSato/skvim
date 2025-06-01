@@ -16,13 +16,10 @@ export { HelpPanel } from "./HelpPanel";
 export { Editor } from "./Editor";
 export { StatusLine } from "./StatusLine";
 export { TechnicalNotes } from "./TechnicalNotes";
-export { Header } from "./Header";
 
-// Utilities and handlers
 export { useKeyboardHandler } from "./KeyboardHandler";
 export { clampCursor, isWordChar, isWhitespace, getModeColor } from "./utils";
 
-// Data
 export { commandTooltips } from "./command-tooltips";
 
 export { createInitialState } from "./initial-state";

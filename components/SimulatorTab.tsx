@@ -124,21 +124,6 @@ export const SimulatorTab: React.FC = () => {
 
   return (
     <div className="space-y-6">
-      {/* Header */}
-      <Card className="bg-white/5 backdrop-blur-sm border-white/10">
-        <CardHeader>
-          <CardTitle className="text-white flex items-center gap-2">
-            <Brain className="w-6 h-6 text-cyan-400" />
-            🎯 Vim Simulator: Technical Implementation Guide
-          </CardTitle>
-          <CardDescription className="text-blue-200">
-            A functional Vim editor built with React and TypeScript,
-            demonstrating the architectural challenges and solutions for modal
-            text editing in web environments.
-          </CardDescription>
-        </CardHeader>
-      </Card>
-
       {/* Interactive Simulator */}
       <VimSimulator />
 

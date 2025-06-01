@@ -1,18 +1,8 @@
 "use client";
 
 import React from "react";
-import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
-import {
-  Play,
-  RotateCcw,
-  Info,
-  Square,
-  Type,
-  MousePointer,
-} from "lucide-react";
+import { Play, RotateCcw, Info, Type, MousePointer } from "lucide-react";
 import { VimMode } from "./types";
-import { getModeColor } from "./utils";
 
 interface ControlPanelProps {
   isActive: boolean;
@@ -40,65 +30,107 @@ export const ControlPanel: React.FC<ControlPanelProps> = ({
   onFocus,
 }) => {
   return (
-    <Card className="bg-white/5 backdrop-blur-sm border-white/10">
-      <CardContent className="p-4">
+    <div className="bg-gradient-to-br from-slate-900 via-gray-900 to-slate-800 rounded-2xl shadow-2xl border border-slate-700/50 overflow-hidden backdrop-blur-sm">
+      <div className="bg-gradient-to-r from-slate-800 to-slate-700 px-6 py-4 border-b border-slate-600/30">
         <div className="flex flex-wrap gap-4 items-center justify-between">
-          <div className="flex gap-2">
-            <Button
+          {/* Action Buttons */}
+          <div className="flex gap-3">
+            <button
               onClick={onActivate}
-              className="bg-green-600 hover:bg-green-700"
-              size="sm"
+              className="px-4 py-2 bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-400 hover:to-emerald-500 text-white text-sm font-medium rounded-xl shadow-lg"
             >
-              <Play className="w-4 h-4 mr-1" />
-              Activate
-            </Button>
-            <Button
+              <div className="flex items-center space-x-2">
+                <Play className="w-4 h-4" />
+                <span>Activate</span>
+              </div>
+            </button>
+
+            <button
               onClick={onReset}
-              variant="outline"
-              className="text-white border-white/20 hover:bg-white/10"
-              size="sm"
+              className="px-4 py-2 bg-gradient-to-r from-slate-600 to-slate-700 hover:from-slate-500 hover:to-slate-600 text-slate-200 text-sm font-medium rounded-xl border border-slate-500/30 shadow-lg"
             >
-              <RotateCcw className="w-4 h-4 mr-1" />
-              Reset
-            </Button>
-            <Button
+              <div className="flex items-center space-x-2">
+                <RotateCcw className="w-4 h-4" />
+                <span>Reset</span>
+              </div>
+            </button>
+
+            <button
               onClick={onToggleHelp}
-              variant="outline"
-              className="text-white border-white/20 hover:bg-white/10"
-              size="sm"
+              className="px-4 py-2 bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-500 hover:to-cyan-500 text-white text-sm font-medium rounded-xl shadow-lg"
             >
-              <Info className="w-4 h-4 mr-1" />
-              Help
-            </Button>
+              <div className="flex items-center space-x-2">
+                <Info className="w-4 h-4" />
+                <span>Help</span>
+              </div>
+            </button>
           </div>
 
-          {/* Status indicators */}
-          <div className="flex gap-4 text-sm">
-            <div className="flex items-center gap-1">
-              <Square
-                className={`w-3 h-3 ${
-                  isActive ? "text-green-400" : "text-red-400"
+          {/* Modern Status Indicators */}
+          <div className="flex gap-6 text-sm">
+            {/* Connection Status */}
+            <div className="flex items-center space-x-2">
+              <div
+                className={`w-3 h-3 rounded-full ${
+                  isActive
+                    ? "bg-green-400 shadow-lg shadow-green-400/50"
+                    : "bg-red-400 shadow-lg shadow-red-400/50"
                 }`}
-              />
-              <span className="text-white">
+              ></div>
+              <span className="text-slate-200 font-medium">
                 {isActive ? "Active" : "Inactive"}
               </span>
             </div>
-            <div className="flex items-center gap-1">
-              <Type className="w-3 h-3 text-blue-400" />
-              <span className={`font-mono ${getModeColor(mode)}`}>{mode}</span>
+
+            {/* Mode Status */}
+            <div className="flex items-center space-x-2">
+              <Type className="w-4 h-4 text-blue-400" />
+              <div
+                className={`
+                px-3 py-1 rounded-full text-xs font-medium uppercase tracking-wider
+                ${
+                  mode === "NORMAL"
+                    ? "bg-blue-500/20 text-blue-300 border border-blue-400/30"
+                    : ""
+                }
+                ${
+                  mode === "INSERT"
+                    ? "bg-green-500/20 text-green-300 border border-green-400/30"
+                    : ""
+                }
+                ${
+                  mode === "VISUAL"
+                    ? "bg-purple-500/20 text-purple-300 border border-purple-400/30"
+                    : ""
+                }
+                ${
+                  mode === "VISUAL_LINE"
+                    ? "bg-purple-500/20 text-purple-300 border border-purple-400/30"
+                    : ""
+                }
+                ${
+                  mode === "COMMAND"
+                    ? "bg-orange-500/20 text-orange-300 border border-orange-400/30"
+                    : ""
+                }
+              `}
+              >
+                {mode.replace("_", " ")}
+              </div>
             </div>
+
+            {/* Key Sequence */}
             {keySequence.length > 0 && (
-              <div className="flex items-center gap-1">
-                <MousePointer className="w-3 h-3 text-purple-400" />
-                <span className="text-purple-300 font-mono">
+              <div className="flex items-center space-x-2">
+                <MousePointer className="w-4 h-4 text-purple-400" />
+                <div className="px-3 py-1 bg-purple-500/20 text-purple-300 border border-purple-400/30 rounded-full text-xs font-mono font-medium">
                   {keySequence.join("")}
-                </span>
+                </div>
               </div>
             )}
           </div>
         </div>
-      </CardContent>
-    </Card>
+      </div>
+    </div>
   );
 };
