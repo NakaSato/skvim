@@ -247,131 +247,162 @@ export const ConfigTab: React.FC = () => {
         </div>
       </div>
 
-      <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-4">
-        <h4 className="text-lg font-semibold text-yellow-800 mb-3">
-          💡 การติดตั้งและจัดการ .vimrc
+      <div className="bg-gradient-to-r from-yellow-500 to-orange-500 rounded-2xl p-6 shadow-2xl border border-yellow-400/30">
+        <h4 className="text-lg font-bold text-white mb-4 flex items-center gap-2">
+          <span>💡</span>
+          การติดตั้งและจัดการ .vimrc
         </h4>
-        <div className="grid gap-4 md:grid-cols-2 text-sm">
-          <div>
-            <h5 className="font-semibold mb-2">ตำแหน่งไฟล์ .vimrc:</h5>
-            <ul className="space-y-1 text-yellow-700">
-              <li>
-                • Linux/Mac: <code>~/.vimrc</code>
+        <div className="grid gap-6 md:grid-cols-2 text-sm">
+          <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4 border border-white/20">
+            <h5 className="font-bold text-white mb-3">ตำแหน่งไฟล์ .vimrc:</h5>
+            <ul className="space-y-2 text-yellow-100">
+              <li className="flex items-center gap-2">
+                <div className="w-1.5 h-1.5 bg-yellow-300 rounded-full"></div>
+                Linux/Mac: <code className="bg-black/30 px-2 py-1 rounded text-yellow-200">~/.vimrc</code>
               </li>
-              <li>
-                • Windows: <code>%USERPROFILE%\_vimrc</code>
+              <li className="flex items-center gap-2">
+                <div className="w-1.5 h-1.5 bg-yellow-300 rounded-full"></div>
+                Windows: <code className="bg-black/30 px-2 py-1 rounded text-yellow-200">%USERPROFILE%\_vimrc</code>
               </li>
-              <li>
-                • หรือ <code>:echo $MYVIMRC</code> ใน VIM
+              <li className="flex items-center gap-2">
+                <div className="w-1.5 h-1.5 bg-yellow-300 rounded-full"></div>
+                หรือ <code className="bg-black/30 px-2 py-1 rounded text-yellow-200">:echo $MYVIMRC</code> ใน VIM
               </li>
             </ul>
           </div>
-          <div>
-            <h5 className="font-semibold mb-2">การทดสอบการตั้งค่า:</h5>
-            <ul className="space-y-1 text-yellow-700">
-              <li>
-                • <code>:source ~/.vimrc</code> - โหลดใหม่
+          <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4 border border-white/20">
+            <h5 className="font-bold text-white mb-3">การทดสอบการตั้งค่า:</h5>
+            <ul className="space-y-2 text-yellow-100">
+              <li className="flex items-center gap-2">
+                <div className="w-1.5 h-1.5 bg-yellow-300 rounded-full"></div>
+                <code className="bg-black/30 px-2 py-1 rounded text-yellow-200">:source ~/.vimrc</code> - โหลดใหม่
               </li>
-              <li>
-                • <code>:set number?</code> - ตรวจสอบค่า
+              <li className="flex items-center gap-2">
+                <div className="w-1.5 h-1.5 bg-yellow-300 rounded-full"></div>
+                <code className="bg-black/30 px-2 py-1 rounded text-yellow-200">:set number?</code> - ตรวจสอบค่า
               </li>
-              <li>• แยกการตั้งค่าออกเป็นส่วนๆ</li>
+              <li className="flex items-center gap-2">
+                <div className="w-1.5 h-1.5 bg-yellow-300 rounded-full"></div>
+                แยกการตั้งค่าออกเป็นส่วนๆ
+              </li>
             </ul>
           </div>
         </div>
       </div>
 
-      <div className="bg-white p-6 rounded-lg shadow-md">
-        <h4 className="text-lg font-semibold mb-3">
-          📋 ไฟล์ .vimrc ตัวอย่างสำหรับมือใหม่
-        </h4>
-        <div className="bg-gray-900 text-green-400 p-4 rounded font-mono text-sm overflow-x-auto max-h-96 overflow-y-auto">
-          <div className="space-y-1">
-            <div>
-              <span className="text-gray-500">
-                " ===========================================
-              </span>
+      <div className="bg-gradient-to-br from-slate-900 via-gray-900 to-slate-800 rounded-2xl shadow-2xl border border-slate-700/50 overflow-hidden backdrop-blur-sm">
+        <div className="bg-gradient-to-r from-slate-600 to-gray-600 px-6 py-4 border-b border-slate-600/30">
+          <h4 className="text-lg font-bold text-white flex items-center gap-2">
+            <span>📋</span>
+            ไฟล์ .vimrc ตัวอย่างสำหรับมือใหม่
+          </h4>
+        </div>
+        <div className="p-6">
+          <div className="bg-slate-950 border border-slate-700/50 rounded-xl p-4 font-mono text-sm overflow-x-auto max-h-96 overflow-y-auto">
+            <div className="space-y-1">
+              <div>
+                <span className="text-slate-500">
+                  " ===========================================
+                </span>
+              </div>
+              <div>
+                <span className="text-slate-500">
+                  " Basic VIM Configuration for Beginners
+                </span>
+              </div>
+              <div>
+                <span className="text-slate-500">
+                  " ===========================================
+                </span>
+              </div>
+              <div>
+                <br />
+              </div>
+              <div>
+                <span className="text-slate-500">" การแสดงผล</span>
+              </div>
+              <div className="text-green-400">set number relativenumber</div>
+              <div className="text-green-400">set cursorline</div>
+              <div className="text-green-400">set showmatch</div>
+              <div className="text-green-400">syntax enable</div>
+              <div>
+                <br />
+              </div>
+              <div>
+                <span className="text-slate-500">" การค้นหา</span>
+              </div>
+              <div className="text-green-400">set hlsearch incsearch</div>
+              <div className="text-green-400">set ignorecase smartcase</div>
+              <div>
+                <br />
+              </div>
+              <div>
+                <span className="text-slate-500">" Indentation</span>
+              </div>
+              <div className="text-green-400">set tabstop=4 shiftwidth=4</div>
+              <div className="text-green-400">set expandtab smartindent</div>
+              <div>
+                <br />
+              </div>
+              <div>
+                <span className="text-slate-500">" Key Mappings</span>
+              </div>
+              <div className="text-green-400">let mapleader = ","</div>
+              <div className="text-green-400">nnoremap &lt;leader&gt;w :w&lt;CR&gt;</div>
+              <div className="text-green-400">nnoremap &lt;leader&gt;q :q&lt;CR&gt;</div>
+              <div className="text-green-400">nnoremap &lt;leader&gt;h :noh&lt;CR&gt;</div>
+              <div>
+                <br />
+              </div>
+              <div>
+                <span className="text-slate-500">" ประสิทธิภาพ</span>
+              </div>
+              <div className="text-green-400">set lazyredraw</div>
+              <div className="text-green-400">set history=1000</div>
+              <div className="text-green-400">set undolevels=1000</div>
             </div>
-            <div>
-              <span className="text-gray-500">
-                " Basic VIM Configuration for Beginners
-              </span>
-            </div>
-            <div>
-              <span className="text-gray-500">
-                " ===========================================
-              </span>
-            </div>
-            <div>
-              <br />
-            </div>
-            <div>
-              <span className="text-gray-500">" การแสดงผล</span>
-            </div>
-            <div>set number relativenumber</div>
-            <div>set cursorline</div>
-            <div>set showmatch</div>
-            <div>syntax enable</div>
-            <div>
-              <br />
-            </div>
-            <div>
-              <span className="text-gray-500">" การค้นหา</span>
-            </div>
-            <div>set hlsearch incsearch</div>
-            <div>set ignorecase smartcase</div>
-            <div>
-              <br />
-            </div>
-            <div>
-              <span className="text-gray-500">" Indentation</span>
-            </div>
-            <div>set tabstop=4 shiftwidth=4</div>
-            <div>set expandtab smartindent</div>
-            <div>
-              <br />
-            </div>
-            <div>
-              <span className="text-gray-500">" Key Mappings</span>
-            </div>
-            <div>let mapleader = ","</div>
-            <div>nnoremap &lt;leader&gt;w :w&lt;CR&gt;</div>
-            <div>nnoremap &lt;leader&gt;q :q&lt;CR&gt;</div>
-            <div>nnoremap &lt;leader&gt;h :noh&lt;CR&gt;</div>
-            <div>
-              <br />
-            </div>
-            <div>
-              <span className="text-gray-500">" ประสิทธิภาพ</span>
-            </div>
-            <div>set lazyredraw</div>
-            <div>set history=1000</div>
-            <div>set undolevels=1000</div>
           </div>
         </div>
       </div>
 
-      <div className="bg-red-50 border border-red-200 rounded-lg p-4">
-        <h4 className="text-lg font-semibold text-red-800 mb-3">
-          ⚠️ ข้อควรระวัง
+      <div className="bg-gradient-to-r from-red-500 to-pink-500 rounded-2xl p-6 shadow-2xl border border-red-400/30">
+        <h4 className="text-lg font-bold text-white mb-4 flex items-center gap-2">
+          <span>⚠️</span>
+          ข้อควรระวัง
         </h4>
-        <div className="grid gap-3 md:grid-cols-2 text-sm text-red-700">
-          <div>
-            <span className="font-semibold">การสำรองข้อมูล:</span>
-            <ul className="ml-4 space-y-1">
-              <li>• สำรอง .vimrc เดิมก่อนแก้ไข</li>
-              <li>• ทดสอบการตั้งค่าใหม่ทีละส่วน</li>
-              <li>• เก็บ .vimrc ใน version control</li>
+        <div className="grid gap-6 md:grid-cols-2 text-sm text-white">
+          <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4 border border-white/20">
+            <span className="font-bold text-red-100 block mb-3">การสำรองข้อมูล:</span>
+            <ul className="space-y-2">
+              <li className="flex items-start gap-2">
+                <div className="w-1.5 h-1.5 bg-red-200 rounded-full mt-2 flex-shrink-0"></div>
+                <span>สำรอง .vimrc เดิมก่อนแก้ไข</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <div className="w-1.5 h-1.5 bg-red-200 rounded-full mt-2 flex-shrink-0"></div>
+                <span>ทดสอบการตั้งค่าใหม่ทีละส่วน</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <div className="w-1.5 h-1.5 bg-red-200 rounded-full mt-2 flex-shrink-0"></div>
+                <span>เก็บ .vimrc ใน version control</span>
+              </li>
             </ul>
           </div>
-          <div>
-            <span className="font-semibold">การแก้ไขปัญหา:</span>
-            <ul className="ml-4 space-y-1">
-              <li>
-                • หากมีปัญหา ลองใช้ <code>vim -u NONE</code>
+          <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4 border border-white/20">
+            <span className="font-bold text-red-100 block mb-3">การแก้ไขปัญหา:</span>
+            <ul className="space-y-2">
+              <li className="flex items-start gap-2">
+                <div className="w-1.5 h-1.5 bg-red-200 rounded-full mt-2 flex-shrink-0"></div>
+                <span>หากมีปัญหา ลองใช้ <code className="bg-black/30 px-1 py-0.5 rounded text-red-200">vim -u NONE</code></span>
               </li>
-              <li>• ตรวจสอบ syntax ใน .vimrc</li>
-              <li>• อ่าน error message ที่ปรากฏ</li>
+              <li className="flex items-start gap-2">
+                <div className="w-1.5 h-1.5 bg-red-200 rounded-full mt-2 flex-shrink-0"></div>
+                <span>ตรวจสอบ syntax ใน .vimrc</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <div className="w-1.5 h-1.5 bg-red-200 rounded-full mt-2 flex-shrink-0"></div>
+                <span>อ่าน error message ที่ปรากฏ</span>
+              </li>
             </ul>
           </div>
         </div>

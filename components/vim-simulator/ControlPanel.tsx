@@ -8,11 +8,9 @@ interface ControlPanelProps {
   isActive: boolean;
   mode: VimMode;
   showHelp: boolean;
-  showNotes: boolean;
   keySequence: string[];
   onActivate: () => void;
   onToggleHelp: () => void;
-  onToggleNotes: () => void;
   onReset: () => void;
   onFocus: () => void;
 }
@@ -21,12 +19,10 @@ export const ControlPanel: React.FC<ControlPanelProps> = ({
   isActive,
   mode,
   showHelp,
-  showNotes,
   keySequence,
   onActivate,
   onReset,
   onToggleHelp,
-  onToggleNotes,
   onFocus,
 }) => {
   return (

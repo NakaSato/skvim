@@ -11,14 +11,12 @@ import { ControlPanel } from "./vim-simulator/ControlPanel";
 import { Editor } from "./vim-simulator/Editor";
 import { StatusLine } from "./vim-simulator/StatusLine";
 import { HelpPanel } from "./vim-simulator/HelpPanel";
-import { TechnicalNotes } from "./vim-simulator/TechnicalNotes";
 
 export function VimSimulator() {
   // Core state
   const [state, setState] = useState<EditorState>(createInitialState());
   const [isActive, setIsActive] = useState(false);
   const [showHelp, setShowHelp] = useState(false);
-  const [showNotes, setShowNotes] = useState(false);
   const editorRef = useRef<HTMLDivElement>(null);
 
   // State management for undo/redo
@@ -60,7 +58,6 @@ export function VimSimulator() {
     setState(createInitialState());
     setIsActive(false);
     setShowHelp(false);
-    setShowNotes(false);
   };
 
   // Focus management
@@ -154,11 +151,9 @@ export function VimSimulator() {
           isActive={isActive}
           mode={state.mode}
           showHelp={showHelp}
-          showNotes={showNotes}
           keySequence={keySequence}
           onActivate={() => setIsActive(true)}
           onToggleHelp={() => setShowHelp(!showHelp)}
-          onToggleNotes={() => setShowNotes(!showNotes)}
           onReset={resetSimulator}
           onFocus={() => {
             setIsActive(true);
@@ -168,9 +163,6 @@ export function VimSimulator() {
 
         {/* Status Line */}
         <StatusLine state={state} />
-
-        {/* Technical Notes */}
-        {showNotes && <TechnicalNotes />}
       </div>
     </TooltipProvider>
   );

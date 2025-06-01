@@ -15,7 +15,6 @@ export { ControlPanel } from "./ControlPanel";
 export { HelpPanel } from "./HelpPanel";
 export { Editor } from "./Editor";
 export { StatusLine } from "./StatusLine";
-export { TechnicalNotes } from "./TechnicalNotes";
 
 export { useKeyboardHandler } from "./KeyboardHandler";
 export { clampCursor, isWordChar, isWhitespace, getModeColor } from "./utils";
