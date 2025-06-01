@@ -6,6 +6,7 @@ import { PhilosophyTab } from "@/components/PhilosophyTab";
 import { ModesTab } from "@/components/ModesTab";
 import { BasicTab } from "@/components/BasicTab";
 import { AdvancedTab } from "@/components/AdvancedTab";
+import { AdvancedFeaturesTab } from "@/components/AdvancedFeaturesTab";
 import { SearchTab } from "@/components/SearchTab";
 import { ConfigTab } from "@/components/ConfigTab";
 import { LearningPathTab } from "@/components/LearningPathTab";
@@ -26,7 +27,7 @@ export default function Home() {
 
         <div className="mt-12">
           <Tabs defaultValue="philosophy" className="w-full max-w-6xl mx-auto">
-            <TabsList className="grid w-full grid-cols-7 mb-8 text-xs">
+            <TabsList className="grid w-full grid-cols-8 mb-8 text-xs">
               <TabsTrigger
                 value="philosophy"
                 className="flex items-center gap-1"
@@ -45,6 +46,13 @@ export default function Home() {
               <TabsTrigger value="advanced" className="flex items-center gap-1">
                 <Edit className="h-3 w-3" />
                 ขั้นสูง
+              </TabsTrigger>
+              <TabsTrigger
+                value="advanced-features"
+                className="flex items-center gap-1"
+              >
+                <Target className="h-3 w-3" />
+                เทคนิคขั้นสูง
               </TabsTrigger>
               <TabsTrigger value="search" className="flex items-center gap-1">
                 <Search className="h-3 w-3" />
@@ -74,6 +82,10 @@ export default function Home() {
 
             <TabsContent value="advanced">
               <AdvancedTab />
+            </TabsContent>
+
+            <TabsContent value="advanced-features">
+              <AdvancedFeaturesTab />
             </TabsContent>
 
             <TabsContent value="search">
