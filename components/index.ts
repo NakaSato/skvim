@@ -8,6 +8,8 @@ export { AdvancedFeaturesTab } from "./AdvancedFeaturesTab";
 export { SearchTab } from "./SearchTab";
 export { ConfigTab } from "./ConfigTab";
 export { LearningPathTab } from "./LearningPathTab";
+export { VimSimulator } from "./VimSimulator";
+export { SimulatorTab } from "./SimulatorTab";
 
 // Mode components
 export {

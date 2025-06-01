@@ -49,7 +49,7 @@ export const MacrosAndAutomation = () => {
                   </div>
                   <div>
                     <kbd className="px-2 py-1 bg-gray-700 rounded mr-2">
-                      q{register}
+                      q[a-z]
                     </kbd>
                     <span className="text-red-200">
                       เริ่มบันทึกลงใน register (a-z)
@@ -132,7 +132,7 @@ export const MacrosAndAutomation = () => {
               <div className="space-y-2">
                 <div>
                   <kbd className="px-2 py-1 bg-gray-700 rounded mr-2">
-                    @{register}
+                    @[a-z]
                   </kbd>
                   <span className="text-green-200">เล่นมาโครที่บันทึกไว้</span>
                 </div>
@@ -153,7 +153,7 @@ export const MacrosAndAutomation = () => {
               <div className="space-y-2">
                 <div>
                   <kbd className="px-2 py-1 bg-gray-700 rounded mr-2">
-                    [N]@{register}
+                    [N]@[a-z]
                   </kbd>
                   <span className="text-green-200">เล่นมาโคร N ครั้ง</span>
                 </div>
@@ -217,7 +217,7 @@ export const MacrosAndAutomation = () => {
               <div className="space-y-2">
                 <div>
                   <kbd className="px-2 py-1 bg-gray-700 rounded mr-2">
-                    :reg {register}
+                    :reg [a-z]
                   </kbd>
                   <span className="text-blue-200">แสดงเนื้อหาของ register</span>
                 </div>
@@ -226,7 +226,7 @@ export const MacrosAndAutomation = () => {
                 </div>
                 <div>
                   <kbd className="px-2 py-1 bg-gray-700 rounded mr-2">
-                    "{register}p
+                    &quot;[a-z]p
                   </kbd>
                   <span className="text-blue-200">
                     วางเนื้อหา register ลงในบัฟเฟอร์
@@ -245,7 +245,7 @@ export const MacrosAndAutomation = () => {
               <div className="space-y-2">
                 <div>
                   <kbd className="px-2 py-1 bg-gray-700 rounded mr-2">
-                    q{A - Z}
+                    q[A-Z]
                   </kbd>
                   <span className="text-blue-200">ต่อท้ายมาโครที่มีอยู่</span>
                 </div>

@@ -479,11 +479,11 @@ export const TextFolding: React.FC = () => {
                   Fold Markers
                 </h5>
                 <code className="text-indigo-100 text-sm block bg-indigo-800/20 p-2 rounded">
-                  // Section 1 &#123;&#123;&#123;
+                  {`// Section 1 {{{`}
                   <br />
                   code here...
                   <br />
-                  // &#125;&#125;&#125;
+                  {`// }}}`}
                   <br />
                   :set foldmethod=marker
                 </code>

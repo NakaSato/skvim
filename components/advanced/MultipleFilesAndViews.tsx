@@ -94,7 +94,7 @@ export const MultipleFilesAndViews = () => {
               </div>
               <div>
                 <kbd className="px-2 py-1 bg-gray-700 rounded mr-2">
-                  :bufdo {cmd}
+                  :bufdo [cmd]
                 </kbd>
                 รันคำสั่ง cmd กับทุกบัฟเฟอร์
               </div>

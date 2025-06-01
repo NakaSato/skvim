@@ -1,7 +1,15 @@
 "use client";
 
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { Code, Keyboard, Edit, Search, BookOpen, Target } from "lucide-react";
+import {
+  Code,
+  Keyboard,
+  Edit,
+  Search,
+  BookOpen,
+  Target,
+  Terminal,
+} from "lucide-react";
 import { PhilosophyTab } from "@/components/PhilosophyTab";
 import { ModesTab } from "@/components/ModesTab";
 import { BasicTab } from "@/components/BasicTab";
@@ -10,6 +18,7 @@ import { AdvancedFeaturesTab } from "@/components/AdvancedFeaturesTab";
 import { SearchTab } from "@/components/SearchTab";
 import { ConfigTab } from "@/components/ConfigTab";
 import { LearningPathTab } from "@/components/LearningPathTab";
+import { SimulatorTab } from "@/components/SimulatorTab";
 
 export default function Home() {
   return (
@@ -27,7 +36,7 @@ export default function Home() {
 
         <div className="mt-12">
           <Tabs defaultValue="philosophy" className="w-full max-w-6xl mx-auto">
-            <TabsList className="grid w-full grid-cols-8 mb-8 text-xs">
+            <TabsList className="grid w-full grid-cols-9 mb-8 text-xs">
               <TabsTrigger
                 value="philosophy"
                 className="flex items-center gap-1"
@@ -66,6 +75,13 @@ export default function Home() {
                 <Target className="h-3 w-3" />
                 เส้นทาง
               </TabsTrigger>
+              <TabsTrigger
+                value="simulator"
+                className="flex items-center gap-1"
+              >
+                <Terminal className="h-3 w-3" />
+                จำลอง
+              </TabsTrigger>
             </TabsList>
 
             <TabsContent value="philosophy">
@@ -98,6 +114,10 @@ export default function Home() {
 
             <TabsContent value="path">
               <LearningPathTab />
+            </TabsContent>
+
+            <TabsContent value="simulator">
+              <SimulatorTab />
             </TabsContent>
           </Tabs>
         </div>
